@@ -1,0 +1,18 @@
+
+<input placeholder="Filter your to-dos" type="text" ng-model="$ctrl.filter" /> <br>
+
+
+   <ol>
+      <li ng-repeat="item in $ctrl.list" ng-class="{strick:item.complete == false}">
+        
+          <button class= "completed" ng-class="$ctrl.complete" ng-if="item.complete === true">Complete</button>
+        
+        {{item.todo}}
+          
+          <button class="close" ng-click="$ctrl.remove($index)"> X </button>
+      </li>
+   </ol>
+  
+  <input type="text" placeholder="Add your to do" ng-model="$ctrl.toDos"/> <br>
+<br>
+<button class="add" ng-click="$ctrl.add()">Add</button>
